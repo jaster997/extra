@@ -1,0 +1,37 @@
+{% extends 'inicio/encabezado.html' %}
+
+{% block titulo%}
+Eliminar comentario
+{%endblock%}
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+{% block principal%}
+
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Eliminar comentario de la tabla</h2>
+        <div class="line-dec"></div>
+        <h5>Eliminar Comentario</h5>
+        <p>¿Estas Seguro que deseas <strong>Eliminar</strong> el comentario seleccionado?. </p>
+      </div>
+      <div class="row">
+        <div class="right-content">
+          <div class="container">
+            <form method="POST">
+                {%csrf_token%}
+        
+                <a href= "{%url 'Publico' %}" class="btn btn-primary">Cancelar</a>
+                <button type="Submit" class="btn btn-success"> Si </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{%endblock%}

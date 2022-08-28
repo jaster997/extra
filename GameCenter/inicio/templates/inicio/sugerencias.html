@@ -1,0 +1,63 @@
+{% extends 'inicio/encabezado.html' %}
+
+{%block titulo%}
+Sugerencias de proveedores
+{%endblock%}
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+{%block principal %}
+
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Contacto</h2>
+        <div class="line-dec"></div>
+        <span>Quieres hacer alguna sugerencia hacia nuestros productos, ingresa aqui tu sugerencia así como tus productos ofertados. </span>
+      </div>
+      <div class="row">
+        <div class="right-content">
+          <div class="container">
+            <form id="contact" action="{% url 'Sugerencias' %}" method="POST" enctype="multipart/form-data">
+              <div class="row">
+                {% csrf_token %}
+                <div class="col-md-12">
+                  <fieldset>
+                    <input name="proveedor" type="text" class="form-control"
+                      id="name" placeholder="Nombre del proveedor" required="" />
+                  </fieldset>
+                </div>
+                
+                
+                <div class="col-md-12">
+                  <fieldset>
+                    <textarea name="sugerencia" rows="6" class="form-control"
+                      id="message" placeholder="Sugerencia" required="" ></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <input type="file" name="archivo" />
+                  </fieldset>
+                </div>
+                
+
+                <div class="col-md-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="button btn-success">
+                      Enviar sugerencia
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{%endblock%}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>{% block titulo %} {%endblock%}</title>
+
+    <meta name="description" content="" />
+    <meta name="author" content="Tooplate" />
+    
+    {% load static %}
+    <link href="{% static 'inicio/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <!-- Additional CSS Files -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'inicio/assets/css/fontawesome.css' %}"/>
+    <link rel="stylesheet" href="{% static 'inicio/assets/css/tooplate-style.css' %}"/>
+    <link rel="stylesheet" href="{% static 'inicio/assets/css/owl.css' %}" />
+    <link rel="stylesheet" href="{% static 'inicio/assets/css/lightbox.css' %}" />
+    <script src="{% static 'inicio/vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'inicio/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+
+    <script src="{% static 'inicio/assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'inicio/assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'inicio/assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'inicio/assets/js/custom.js' %}"></script>
+  </head>
+<!--
+Tooplate 2116 Blugoon
+https://www.tooplate.com/view/2116-blugoon
+-->
+  <body>
+
+    <div id="page-wraper">
+        <!-- Sidebar Menu -->
+        <div class="responsive-nav">
+          <i class="fa fa-bars" id="menu-toggle"></i>
+          <div id="menu" class="menu">
+            <i class="fa fa-times" id="menu-close"></i>
+            <div class="container">
+              <div class="image">
+                <a href="#"><img src="{%block imagenes%}{%endblock%}" alt="Gamecenter"/></a>
+              </div>
+              <div class="author-content">
+                <h4>Game Center</h4>
+                <span>Tienda de videojuegos</span>
+              </div>
+              <nav class="main-nav" role="navigation">
+                <ul class="main-menu">
+                  <li><a href="{% url 'Inicio' %}">Inicio</a></li>
+                  <li><a href="{% url 'Catalogo' %}">Catalogo</a></li>
+                  <li><a href="{% url 'Publico' %}">Comunidad</a></li>
+                  <li><a href="{% url 'Sugerencias' %}">Proveedores</a></li>
+                </ul>
+              </nav>
+              <div class="social-network">
+                <ul class="soial-icons">
+                  <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-rss"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="copyright-text">
+                <p>Copyright 2020 Blugoon<br>
+                Design: Tooplate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+    {% block principal%}
+
+    {% endblock %}
+    
+
+  </body>
+</html>

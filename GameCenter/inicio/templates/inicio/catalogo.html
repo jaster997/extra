@@ -1,0 +1,48 @@
+{% extends 'inicio/encabezado.html' %}
+
+{%block titulo%}
+Catalogo de productos
+{%endblock%}
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+{%block principal%}
+
+<section class="section my-services" data-section="section2">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Catalogo</h2>
+        <div class="line-dec"></div>
+        <span></span>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="service-item">
+            <i class="fa fa-area-chart"></i>
+            <h4>Mobiliario</h4>
+            <p>Contamos con todo el Mobiliario necesario para crear el setup perfecto.</p>
+            <div class="text-center">
+                <a href="{% url 'Mobiliario'%}" class="btn btn-success">Ir a Mobiliario</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="service-item">
+            <i class="fa fa-check-square-o"></i>
+            <h4>Accesorios</h4>
+            <p>Contamos con todo tipo de accesorios para mejorar tu experiencia al jugar.</p>
+            <div class="text-center">
+                <a href="{% url 'Accesorios'%}" class="btn btn-success">Ir a Accesorios</a>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+  </section>
+
+{%endblock%}

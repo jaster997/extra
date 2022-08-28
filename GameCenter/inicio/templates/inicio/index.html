@@ -1,0 +1,77 @@
+{% extends 'inicio/encabezado.html' %}
+
+{% block titulo %}
+GAME CENTER
+{%endblock%}
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+{% block principal %}
+
+<section class="section about-me" data-section="section1">
+    <div class="container">
+    <div class="top-header">
+        <img src="static/inicio/assets/images/setuporange.jpg" alt="aerobic girls" />
+    </div>
+      <div class="section-heading">
+      
+        <h2>¡Bienvenido a Gamecenter!</h2>
+        <div class="line-dec"></div>
+        <span>Gamecenter es una empresa dedicada a la venta de Mobiliario y Accesorios para videojuegos por medio de nuestro sitio web.</span>
+        <p>Somos un equipo conformado por admiradores de los videojuegos.</p>
+        <p>Nuestro fin es, lograr que los admiradores de los videojuegos, logren tener a la mano lo mejor para que su experiencia al jugar mejore, adquiriendo nuestros productos, como Mobiliario para mejorar la comodidad al jugar, también Accesorios para mejorar la forma de jugar y productos que ayuden a cuidar tus productos.</p>
+      </div>
+      <div class="right-image-post">
+        <div class="row">
+
+          <div class="col-md-8">
+            <div class="left-text">
+              <h4>Mobiliario</h4>
+              <p></p>Contamos con una alta gama de Mobiliario en nuestro sitio web asi como distintos provedores.
+              <p> <a rel="nofollow" href="https://www.twitch.tv/thegrefg">TheGrefg</a>Streamer español en la plataforma de twitch.</p>
+              <div class="white-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="right-image">
+              <img src="static/inicio/assets/images/mobiliairio2.avif" alt="Mountain Reflection" />
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="left-image-post">
+        <div class="row">
+        
+          <div class="col-md-4">
+            <div class="left-image">
+              <img src="static/inicio/assets/images/accesorios2.jpg" alt="Nature Girl" />
+            </div>
+          </div>
+          
+          <div class="col-md-8">
+            <div class="right-text">
+              <h4>Accesorios</h4>
+              <p>Contamos con diversos accesorios con distintas funciones, que son utiles para mejorar la experiencia del jugador así como el cuidado de sus productos para jugar.</p>
+              <p> <a rel="nofollow" href="https://www.twitch.tv/ibai?lang=es-mx">Ibai</a>Streamer español en la plataforma de twitch.</p>
+              <div class="white-button">
+                <a href="#">Read More</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+</div>
+
+{% endblock %}

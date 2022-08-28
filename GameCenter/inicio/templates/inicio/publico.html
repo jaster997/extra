@@ -1,0 +1,94 @@
+{% extends 'inicio/encabezado.html' %}
+
+{% block titulo%}
+Formulario para la comunidad
+{%endblock%}
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+{% block principal%}
+
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Contacto de comunidad</h2>
+        <div class="line-dec"></div>
+        <span>Queremos saber que piensas de nuestro sitio web, así como tu opinion a nuestros productos. </span>
+      </div>
+      <div class="row">
+        <div class="right-content">
+          <div class="container">
+            <form id="contact" action="{% url 'Publico' %}" method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  {% csrf_token %}
+                  <fieldset>
+                    <input name="nombre" type="text" class="form-control"
+                      id="nombre" placeholder="Nombre" autocomplete="off" />
+                  </fieldset>
+                </div>
+                <div class="col-md-6">
+                  <fieldset>
+                    <input name="producto" type="text" class="form-control"
+                      id="producto" placeholder="Producto" autocomplete="off" />
+                  </fieldset>
+                </div>
+               
+                <div class="col-md-12">
+                  <fieldset>
+                    <textarea name="mensaje" rows="6" class="form-control"
+                      id="mensaje" placeholder="Comentario" required="" ></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="button btn-success">
+                      Enviar Comentario
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section-heading">
+        <h2>Comentarios de comunidad</h2>
+        <div class="line-dec"></div>
+      </div>
+      <div class="row">
+          <table class="table table-bordered table-striped">
+              <thead>
+                  <tr>
+                      <th>Usuario</th>
+                      <th>Producto</th>
+                      <th>Mensaje</th>
+                      <th>Editar</th>
+                      <th>Eliminar</th>
+                  </tr>
+              </thead>
+  
+              <tbody>
+                  
+                  {% for comuni in comuni %}
+                  <tr>
+                      <td>{{comuni.nombre}}</td>
+                      <td>{{comuni.producto}}</td>
+                      <td>{{comuni.mensaje}}</td>
+                      <td class="text-center"> <a href="{% url 'Individual' comuni.id%}">Editar</td>
+                      <td class="text-center"><a href="{% url 'Borrar' comuni.id%}">Borrar</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+          </table>
+        </div>
+    </div>
+  </section>
+
+{%endblock%}

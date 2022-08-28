@@ -1,0 +1,61 @@
+{% extends 'inicio/encabezado.html' %}
+
+{% block titulo%}
+Formulario para editar
+{%endblock%}
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+{% block principal%}
+
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Contacto de comunidad</h2>
+        <div class="line-dec"></div>
+        <span>Queremos saber que piensas de nuestro sitio web, así como tu opinion a nuestros productos. </span>
+      </div>
+      <div class="row">
+        <div class="right-content">
+          <div class="container">
+            <form id="contact" action={% url 'Editar' comuni.id%} method="POST">
+              <div class="row">
+                <div class="col-md-6">
+                  {% csrf_token %}
+                  <fieldset>
+                    <input name="nombre" type="text" class="form-control"
+                      id="nombre"  autocomplete="off" value="{{comuni.nombre}}"/>
+                  </fieldset>
+                </div>
+                <div class="col-md-6">
+                  <fieldset>
+                    <input name="producto" type="text" class="form-control"
+                      id="producto"  autocomplete="off" value="{{comuni.producto}}"/>
+                  </fieldset>
+                </div>
+               
+                <div class="col-md-12">
+                  <fieldset>
+                    <textarea name="mensaje" rows="6" class="form-control"
+                      id="mensaje">{{comuni.mensaje}}</textarea>
+                  </fieldset>
+                </div>
+                <div class="col-md-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="button btn-success">
+                      Enviar Comentario
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{%endblock%}

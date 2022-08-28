@@ -1,0 +1,52 @@
+{%extends 'inicio/encabezado.html' %}
+
+{% block titulo %}
+Informacion de productos
+{% endblock %}
+
+
+{%block imagenes%}
+{%load static%}
+{%static 'inicio/assets/images/logogamece.jpeg' %}
+{%endblock%}
+
+
+{% block principal %}
+
+<section class="section my-services" data-section="section2">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Listado de Productos</h2>
+        <div class="line-dec"></div>
+        <span>Productos de esta categoria</span>
+      </div>
+      <div class="row">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                    <th>Existencias</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                
+                {% for catalogo in catalogo%}
+                <tr>
+                    <td class="text-center"><img src="{{catalogo.imagen.url}}" width="50" height="50" ></td>
+                    <td>{{catalogo.nombre}}</td>
+                    <td>${{catalogo.precio}} pesos</td>
+                    <td>{{catalogo.categoria}}</td>
+                    <td>{{catalogo.existencia}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
